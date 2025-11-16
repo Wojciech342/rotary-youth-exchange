@@ -15,7 +15,7 @@ function App() {
         {/* <Route element={<ProtectedRoute />}>
           <Route path='/' element={}>
             <Route index element={} />
-            <Route path="current" element={} />
+            <Route path="camps" element={} />
             <Route path="archive" element={} />
             <Route path="coordinators" element={} />
           </Route>

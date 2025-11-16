@@ -20,7 +20,7 @@ const LoginPage = () => {
 
         try {
             await auth.login(email, password);
-            navigate('/current');
+            navigate('/camps');
         } catch (err: any) {
             setError(err.message || 'Login failed. Please check your credentials.');
         } finally {
