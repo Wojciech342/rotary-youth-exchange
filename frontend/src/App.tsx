@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import { type PageType } from './types/page-type';
+import styles from './styles/App.module.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  // TODO: write the correct logic for definition of authenticated user from storage
+  const [currentPage, setCurrentPage] = useState<PageType>('Current');
+
+  const renderPage = (): React.ReactNode => {
+    if (!isAuthenticated) {
+      return;
+    }
+    switch(currentPage) {
+      case 'Current':
+        return;
+      case 'Archive':
+        return;
+      case 'Coordinators':
+        return;
+      default:
+        return;
+    }
+  }
+
+  return(
+    <div className={styles.appContainer}>
+      <main className={styles.mainContent}>
+        {renderPage()}
+      </main>
+    </div>
+  );
+};
 
 export default App
