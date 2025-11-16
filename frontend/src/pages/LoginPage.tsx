@@ -89,7 +89,7 @@ const LoginPage = () => {
                     <div>
                         <button
                             type="submit"
-                            disabled={true}
+                            disabled={isLoading}
                             className={styles.button}
                         >
                             {isLoading ? "Singing in..." : "Sign in"}
