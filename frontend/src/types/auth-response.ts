@@ -1,5 +1,5 @@
+import { type User } from "./user";
 export interface AuthResponse {
+    user: User;
     token: string;
-    userId: string;
-    expiresIn: number;
 }
