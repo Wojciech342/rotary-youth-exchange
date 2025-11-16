@@ -6,13 +6,23 @@
 
 :root {
   --color-background: #f3f4f6;
-  --color-border: #d1d5db;
+  /* --color-border: #d1d5db;
   --color-light-grey: #e5e7eb;
   --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   --color-dark-blue: #0c3d7c;
   --color-orange: #f7a61b;
   --color-orange-dark: #e79d1e;
   --color-orange-disabled: #f4bd5e;
+  --color-red: #dc2626;
+  --color-red-light: #fee2e2; */
+  --color-blue-light: #019fcb;
+  --color-blue-dark: #17458f;
+  --color-yellow: #f7a81b;
+  --color-text: #39424a;
+  --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --color-border: #cccdd0;
+  --color-yellow-dark: #e79d1e;
+  --color-yellow-disabled: #f4bd5e;
   --color-red: #dc2626;
   --color-red-light: #fee2e2;
 }

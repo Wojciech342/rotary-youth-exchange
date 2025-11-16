@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/auth';
 import logo from "../assets/images/rotary-logo.svg";
-import styles from "../assets/styles/AuthPage.module.css";
+import styles from "../assets/styles/LoginPage.module.css";
 
 const LoginPage = () => {
     const [email, setEmail] = useState('');
@@ -31,10 +31,12 @@ const LoginPage = () => {
     return (
         <div className={styles.container}>
             <div className={styles.wrapper}>
-                <div>
+                <div className={styles.description}>
                     <div className={styles.logo}>
                         <img src={logo} alt="Rotary Club" className={styles.image}/>
-                        Rotary <span>Youth Exchange</span>
+                        <p className={styles.text}>
+                            Rotary <span>Youth Exchange</span>
+                        </p>
                     </div>
                     <h2 className={styles.title}>
                         Camp Management System
@@ -44,13 +46,13 @@ const LoginPage = () => {
                     </p>
                 </div>
                 <form onSubmit={handleSubmit} className={styles.form}>
-                    {error && (
-                        <div className={styles.error}>
-                            {error}
-                        </div>
-                    )}
                     <div className={styles.inputGroup}>
-                        <div>
+                        {error && (
+                            <div className={styles.error}>
+                                {error}
+                            </div>
+                        )}
+                        <div className={styles.inputWrapper}>
                             <label htmlFor="email-address" className={styles.label}>
                                 Email
                             </label>
@@ -66,7 +68,7 @@ const LoginPage = () => {
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
-                        <div>
+                        <div className={styles.inputWrapper}>
                             <label htmlFor="password" className={styles.label}>
                                 Password
                             </label>
@@ -77,6 +79,7 @@ const LoginPage = () => {
                                 autoComplete="current-password"
                                 required
                                 className={styles.input}
+                                placeholder="••••••••"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
@@ -86,7 +89,7 @@ const LoginPage = () => {
                     <div>
                         <button
                             type="submit"
-                            disabled={isLoading}
+                            disabled={true}
                             className={styles.button}
                         >
                             {isLoading ? "Singing in..." : "Sign in"}
