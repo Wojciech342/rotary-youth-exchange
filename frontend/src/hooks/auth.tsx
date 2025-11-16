@@ -10,10 +10,24 @@ export const AuthProvider =  ({ children }: { children: ReactNode }) => {
 
     const login = async (email: string, password: string) => {
         //TODO: implement funtction that will call endpoint on the backend and save all necessary data
+        console.log('Attempting login with:', { email, password });
+        if (email === 'coordinator@example.com' && password === 'password') {
+            const mockToken = 'mock.jwt.token-string-from-backend';
+            const mockUser: User = { id: 1, name: 'Jan Kowalski', email: email };
+
+            localStorage.setItem('authToken', mockToken);
+            setUser(mockUser);
+            setToken(mockToken);
+        } else {
+            throw new Error('Invalid email or password');
+        }
     }
 
     const logout = () => {
         //TODO: implement function for logout by deleting token from the storage
+        setUser(null);
+        setToken(null);
+        localStorage.removeItem('authToken');
     }
 
     return (
