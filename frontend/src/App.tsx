@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { type PageType } from './types/page-type';
+import AuthPage from './pages/AuthPage';
+import { type PageType } from './types/types';
 import styles from './styles/App.module.css';
 
 const App: React.FC = () => {
@@ -10,7 +11,7 @@ const App: React.FC = () => {
 
   const renderPage = (): React.ReactNode => {
     if (!isAuthenticated) {
-      return;
+      return <AuthPage setPage={setCurrentPage} setIsAuthenticated={setIsAuthenticated}/>;
     }
     switch(currentPage) {
       case 'Current':
