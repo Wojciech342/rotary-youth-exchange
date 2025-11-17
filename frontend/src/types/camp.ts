@@ -8,8 +8,8 @@ export interface Camp {
     coordinator: Coordinator;
     date_start: string;
     date_end: string;
-    age_min: string;
-    age_max: string;
+    age_min: number;
+    age_max: number;
     price: number;
     status: 'OPEN' | 'CLOSED' | 'CANCELLED';
     flyer_pdf?: string;
@@ -17,4 +17,5 @@ export interface Camp {
     entire_limit: number;
     male_limit: number;
     female_limit: number;
+    limit_per_country: number;
 }

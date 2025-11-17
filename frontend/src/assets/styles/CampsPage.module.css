@@ -1,0 +1,16 @@
+.container {
+    width: 100%;
+}
+
+.title {
+    font-size: 2rem;
+    color: var(--color-text);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 1.5rem;
+}
+
+.section {
+    width: 100%;
+    margin-bottom: 2.5rem;
+}

@@ -7,6 +7,8 @@ import CampList from '../components/CampList';
 import CampDetailsModal from '../components/CampDetailsModal';
 import AddCampModal from '../components/AddCampModal';
 
+import { mockCoordinator, mockMyCamps, mockOtherCamps } from "../types/mock-data";
+
 const CampsPage = () => {
     const { token, user } = useAuth();
 
@@ -28,6 +30,13 @@ const CampsPage = () => {
             try {
                 //TODO: Make a call to an endpoint on backend where we download camps created by current user
                 //TODO: Make a call to an endpoint on backend where we download other camps active this year
+
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                const myCampsData = mockMyCamps;
+                const otherCampsData = mockOtherCamps;
+
+                setMyCamps(myCampsData);
+                setOtherCamps(otherCampsData);
             } catch (err: any) {
                 setError(err.message);
             } finally {
@@ -41,6 +50,8 @@ const CampsPage = () => {
     const handleCampAdded = (newCamp: Camp) => {
         setMyCamps(prevCamps => [newCamp, ...prevCamps]);
     };
+
+    //TODO: Add search filter
 
     const renderContent = () => {
         if (isLoading) {
@@ -83,8 +94,8 @@ const CampsPage = () => {
     }
 
     return (
-        <div>
-            <h1>
+        <div className={styles.container}>
+            <h1 className={styles.title}>
                 Current Camps
             </h1>
             {renderContent()}
