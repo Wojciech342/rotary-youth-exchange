@@ -4,7 +4,7 @@ import styles from "../assets/styles/Navbar.module.css";
 
 const Navbar = () => {
     const getNavLinkClass = ({ isActive }: { isActive: boolean }) => {
-        return true ? `${styles.navLink} ${styles.active}` : styles.navLink;
+        return isActive ? `${styles.navLink} ${styles.active}` : styles.navLink;
     };
 
     return (
