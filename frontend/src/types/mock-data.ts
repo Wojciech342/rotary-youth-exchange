@@ -7,6 +7,7 @@ export const mockCoordinator: Coordinator = {
     email: 'jan.kowalski@rotary.pl',
     phone: '+48 123 456 789',
     description: 'Coordinator for District 2231.',
+    district: "2321 Poland",
 };
 
 export const mockMyCamps: Camp[] = [
