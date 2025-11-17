@@ -18,6 +18,7 @@ export const AuthProvider =  ({ children }: { children: ReactNode }) => {
             localStorage.setItem('authToken', mockToken);
             setUser(mockUser);
             setToken(mockToken);
+            setIsLoading(false);
         } else {
             throw new Error('Invalid email or password');
         }
