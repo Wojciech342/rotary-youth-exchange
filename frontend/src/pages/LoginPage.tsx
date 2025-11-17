@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/auth';
 import logo from "../assets/images/rotary-logo.svg";
 import styles from "../assets/styles/LoginPage.module.css";
+import Header from '../components/Header';
+import Navbar from '../components/Navbar';
 
 const LoginPage = () => {
     const [email, setEmail] = useState('');
@@ -30,6 +32,8 @@ const LoginPage = () => {
 
     return (
         <div className={styles.container}>
+            <Header />
+            <Navbar />
             <div className={styles.wrapper}>
                 <div className={styles.description}>
                     <div className={styles.logo}>
