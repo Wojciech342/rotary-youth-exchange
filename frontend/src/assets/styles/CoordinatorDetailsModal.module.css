@@ -1,0 +1,93 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .container {
+        flex-direction: row;
+    }
+}
+
+.imageColumn {
+    flex: 1;
+}
+
+.image {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    background-color: #f3f4f6;
+}
+
+.detailsColumn {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+}
+
+.location {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.subHeader {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    margin-top: 1rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.detailRow {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.detailLabel {
+    font-weight: 600;
+    color: #4b5563;
+    flex-basis: 60px;
+    flex-shrink: 0;
+}
+
+.detailValue {
+    color: #111827;
+    word-break: break-all;
+}
+
+.description {
+    font-size: 0.875rem;
+    color: #374151;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    margin-top: 0.5rem;
+}
+
+.campList {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.campItem {
+    font-size: 0.875rem;
+    color: #374151;
+    margin-bottom: 0.25rem;
+}
