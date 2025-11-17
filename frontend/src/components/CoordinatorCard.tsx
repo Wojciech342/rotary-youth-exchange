@@ -1,6 +1,6 @@
 import React from "react";
 import { type Coordinator } from "../types/coordinator";
-import styles from "../assets/styles/Coordinator.module.css";
+import styles from "../assets/styles/CoordinatorCard.module.css";
 
 interface CoordinatorCardProps {
     coordinator: Coordinator;
