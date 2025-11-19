@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { type Camp } from "../types/types";
 import { useAuth } from "../hooks/auth";
-import styles from "../assets/styles/Archive.module.css";
+import styles from "../assets/styles/ArchivePage.module.css";
 
 import CampList from "../components/CampList";
 import CampDetailsModal from "../components/CampDetailsModal";

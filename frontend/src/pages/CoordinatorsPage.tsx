@@ -74,9 +74,8 @@ const CoordinatorsPage = () => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.header}>
-                <h1 className={styles.title}>Coordinators</h1>
-                <div className={styles.searchWrapper}>
+            <h1 className={styles.title}>Coordinators</h1>
+            <div className={styles.searchWrapper}>
                     <input
                         type="text"
                         placeholder="Search by name, district"
@@ -85,7 +84,6 @@ const CoordinatorsPage = () => {
                         onChange={e => setSearchQuery(e.target.value)}
                     />
                 </div>
-            </div>
 
             <section className={styles.section}>
                 {renderContent()}

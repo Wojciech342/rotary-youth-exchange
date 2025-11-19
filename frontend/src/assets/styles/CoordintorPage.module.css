@@ -2,19 +2,12 @@
     width: 100%;
 }
 
-.header {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-@media (min-width: 768px) {
-    .header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
+.title {
+    font-size: 2rem;
+    color: var(--color-blue-dark);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 3rem;
 }
 
 .pageTitle {
