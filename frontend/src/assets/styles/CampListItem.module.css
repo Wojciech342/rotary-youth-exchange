@@ -1,31 +1,79 @@
-.itemRow {
+.item {
     display: flex;
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid #f3f4f6;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    font-size: 0.875rem;
-    color: #374151;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    transition: box-shadow 0.3s;
 }
 
-.itemRow:last-child {
-    border-bottom: none;
+.item:hover {
+    box-shadow: var(--box-shadow-hover);
 }
 
-.itemRow:hover {
-    background-color: #f9fafb;
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-.itemCell {
-    padding: 0 0.5rem;
+.title {
+    color: var(--color-blue-dark);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.secondaryInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 3rem;
+    color: var(--color-text);
+    font-size: 0.8rem;
+}
+
+.majorInfo {
+    display: flex;
+    align-items: start;
+    gap: 1.5rem;
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.type {
+    color: black;
+    font-weight: 700;
+}
+
+.price {
+    color: var(--color-green);
+}
+
+.button {
     display: flex;
     align-items: center;
+    gap: 1rem;
+    border: none;
+    background-color: var(--color-blue-light);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s transform 0.2s;
 }
 
-.status {
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    font-size: 0.75rem;
+.button::after {
+    content: ">";
     font-weight: 500;
-    text-transform: capitalize;
+    font-size: 1.25rem;
+}
+
+.button:hover {
+    background-color: var(--color-blue-light-hover);
+    transform: translateY(-1px);
 }

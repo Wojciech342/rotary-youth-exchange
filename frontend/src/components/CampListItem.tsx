@@ -11,24 +11,30 @@ const CampListItem = ({ camp, onClick }: CampListItemProps) => {
     const formattedDate = `${new Date(camp.date_start).toLocaleDateString()} - ${new Date(camp.date_end).toLocaleDateString()}`;
 
     return (
-        <div className={styles.itemRow} onClick={onClick}>
-            <div className={styles.itemCell}>
-                {camp.name}
+        <div className={styles.item}>
+            <div className={styles.info}>
+                <div className={styles.title}>
+                    {camp.name}
+                </div>
+                <div className={styles.secondaryInfo}>
+                    <p className={styles.country}> Country: {camp.country}</p>
+                    <p className={styles.age}>Age: {camp.age_min}-{camp.age_max}</p>
+                </div>
+                <div className={styles.majorInfo}>
+                    <p className={styles.price}>
+                        <span className={styles.type}>Price:</span> {camp.price} USD
+                    </p>
+                    <p className={styles.date}>
+                        <span className={styles.type}>Date:</span> {formattedDate}
+                    </p>
+                    <p className={`${styles.status} ${styles[camp.status.toLowerCase()]}`}>
+                        <span className={styles.type}>Status:</span> {camp.status}
+                    </p>
+                </div>
             </div>
-            <div className={styles.itemCell}>
-                {camp.country}
-            </div>
-            <div className={styles.itemCell}>
-                {camp.age_min}-{camp.age_max}
-            </div>
-            <div className={styles.itemCell}>
-                {formattedDate}
-            </div>
-            <div className={styles.itemCell}>
-                <span className={`${styles.status} ${styles[camp.status.toLowerCase()]}`}>
-                    {camp.status}
-                </span>
-            </div>
+            <button className={styles.button} onClick={onClick}>
+                More
+            </button>
         </div>
     );
 };

@@ -15,14 +15,6 @@ const CampList = ({ camps, onCampClick }: CampListProps) => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.listHeader}>
-                <div className={styles.headerItem}>Name</div>
-                <div className={styles.headerItem}>Country</div>
-                <div className={styles.headerItem}>Age</div>
-                <div className={styles.headerItem}>Date</div>
-                <div className={styles.headerItem}>Status</div>
-            </div>
-
             <div className={styles.list}>
                 {camps.map(camp => (
                     <CampListItem
