@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { type Camp } from "../types/types";
 import { useAuth } from '../hooks/auth';
 import styles from "../assets/styles/CampsPage.module.css";
@@ -19,6 +19,8 @@ const CampsPage = () => {
 
     const [selectedCamp, setSelectedCamp] = useState<Camp | null>(null);
     const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+    const [searchQueryMyCamps, setSearchQueryMyCamps] = useState('');
+    const [searchQueryOtherCamps, setSearchQueryOtherCamps] = useState('');
 
     useEffect(() => {
         const fetchCamps = async () => {
@@ -52,6 +54,28 @@ const CampsPage = () => {
     };
 
     //TODO: Add search filter
+    // const filteredCoordinators = useMemo(() => {
+    //     return coordinators.filter(coordinator =>
+    //         coordinator.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    //         coordinator.district.toLowerCase().includes(searchQuery.toLowerCase())
+    //     );
+    // }, [coordinators, searchQuery]);
+
+    const filteredMyCamps = useMemo(() => {
+        return myCamps.filter(camp =>
+            camp.name.toLowerCase().includes(searchQueryMyCamps.toLowerCase()) ||
+            camp.country.toLowerCase().includes(searchQueryMyCamps.toLowerCase()) ||
+            camp.description.toLowerCase().includes(searchQueryMyCamps.toLowerCase())
+        );
+    }, [myCamps, searchQueryMyCamps]);
+
+    const filteredOtherCamps = useMemo(() => {
+        return otherCamps.filter(camp =>
+            camp.name.toLowerCase().includes(searchQueryOtherCamps.toLowerCase()) ||
+            camp.country.toLowerCase().includes(searchQueryOtherCamps.toLowerCase()) ||
+            camp.description.toLowerCase().includes(searchQueryOtherCamps.toLowerCase())
+        );
+    }, [otherCamps, searchQueryOtherCamps]);
 
     const renderContent = () => {
         if (isLoading) {
@@ -67,6 +91,13 @@ const CampsPage = () => {
                 <section className={styles.section}>
                     <div className={styles.sectionHeader}>
                         <h2 className={styles.sectionTitle}>My Camps</h2>
+                        <input
+                            type="text"
+                            placeholder="Search by name, country, description"
+                            className={styles.searchInput}
+                            value={searchQueryMyCamps}
+                            onChange={e => setSearchQueryMyCamps(e.target.value)}
+                        />
                         <button
                             className={styles.addButton}
                             onClick={() => setIsAddModalOpen(true)}
@@ -75,7 +106,7 @@ const CampsPage = () => {
                         </button>
                     </div>
                     <CampList
-                        camps={myCamps}
+                        camps={filteredMyCamps}
                         onCampClick={camp => setSelectedCamp(camp)}
                     />
                 </section>
@@ -83,9 +114,16 @@ const CampsPage = () => {
                 <section className={styles.section}>
                     <div className={styles.sectionHeader}>
                         <h2 className={styles.sectionTitle}>Other Camps</h2>
+                        <input
+                            type="text"
+                            placeholder="Search by name, country, description"
+                            className={styles.searchInput}
+                            value={searchQueryOtherCamps}
+                            onChange={e => setSearchQueryOtherCamps(e.target.value)}
+                        />
                     </div>
                     <CampList
-                        camps={otherCamps}
+                        camps={filteredOtherCamps}
                         onCampClick={camp => setSelectedCamp(camp)}
                     />
                 </section>
