@@ -10,7 +10,8 @@ interface CoordinatorDetailsModalProps {
 }
 
 const CoordinatorDetailsModal = ({ coordinator, onClose }: CoordinatorDetailsModalProps) => {
-    const placeholderImg = `https://placehold.co/400x400/003a70/fecb00?text=${coordinator.name.substring(0, 1)}`;
+    const name = coordinator.name.split(" ");
+    const placeholderImg = `https://placehold.co/400x400/aaabab/ffffff?text=${name[0].substring(0, 1) + name[1].substring(0, 1)}`;
 
     return (
         <Modal title="Coordinator Details" onClose={onClose}>
