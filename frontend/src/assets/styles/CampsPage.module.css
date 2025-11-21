@@ -27,6 +27,18 @@
     font-size: 1.5rem;
 }
 
+.searchInput {
+    border: 1px solid var(--color-border);
+    padding: 1rem;
+    border-radius: 1rem;
+    min-width: 300px;
+    outline: none;
+}
+
+.searchInput:focus {
+    border-color: var(--color-border-focus);
+}
+
 .addButton {
     border: none;
     background-color: var(--color-yellow);

@@ -90,7 +90,7 @@
 
 .input:focus {
     outline: none;
-    border-color: var(--color-text);
+    border-color: var(--color-border-focus);
 }
 
 .button {
