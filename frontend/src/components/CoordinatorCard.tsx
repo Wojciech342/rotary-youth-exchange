@@ -21,21 +21,25 @@ const CoordinatorCard = ({ coordinator, onClick}: CoordinatorCardProps) => {
                 />
             </div>
             <div className={styles.wrapper}>
-                <h3 className={styles.name}>{coordinator.name}</h3>
-                <p className={styles.district}>
-                    {coordinator.district}
-                </p>
-                <div className={styles.infoWrapper}>
-                    <span className={styles.infoTitle}>Tel: </span>
-                    <span className={styles.phone}>
-                        {coordinator.phone}
-                    </span>
+                <div className={styles.mainInfo}>
+                    <h3 className={styles.name}>{coordinator.name}</h3>
+                    <p className={styles.district}>
+                        {coordinator.district}
+                    </p>
                 </div>
-                <div className={styles.infoWrapper}>
-                    <span className={styles.infoTitle}>Email: </span>
-                    <span className={styles.email}>
-                        {coordinator.email}
-                    </span>
+                <div className={styles.contactDetails}>
+                    <div className={styles.infoWrapper}>
+                        <span className={styles.infoTitle}>Tel: </span>
+                        <span className={styles.phone}>
+                            {coordinator.phone}
+                        </span>
+                    </div>
+                    <div className={styles.infoWrapper}>
+                        <span className={styles.infoTitle}>Email: </span>
+                        <span className={styles.email}>
+                            {coordinator.email}
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
