@@ -1,17 +1,12 @@
 .container {
     display: flex;
     flex-direction: column;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
     gap: 1.5rem;
-}
-
-@media (min-width: 640px) {
-    .container {
-        flex-direction: row;
-    }
-}
-
-.imageColumn {
-    flex: 1;
 }
 
 .image {
@@ -24,60 +19,59 @@
     background-color: #f3f4f6;
 }
 
-.detailsColumn {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
 .name {
     font-size: 1.75rem;
     font-weight: 700;
-    color: var(--color-primary-dark);
 }
-
-.location {
+.district {
     font-size: 1rem;
     font-weight: 500;
-    color: #4b5563;
-    margin-bottom: 1rem;
+    color: var(--color-text);
+    padding: 0.5rem 0;
 }
 
-.subHeader {
-    font-size: 1.125rem;
+.contact {
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text);
+}
+
+.contactDetails {
+    padding: 0.6rem;
+    background-color: var(--color-background-dark);
+    border-radius: 0.5rem;
+}
+
+.contactDetails:last-of-type {
+    margin: 0.5rem 0 1rem;
+}
+
+.detail {
     font-weight: 600;
-    color: var(--color-primary-dark);
-    margin-top: 1rem;
-    padding-bottom: 0.25rem;
-    border-bottom: 1px solid var(--color-border);
+    color: var(--color-blue-light);
 }
 
-.detailRow {
-    display: flex;
-    gap: 0.5rem;
-    font-size: 0.875rem;
-    margin-top: 0.25rem;
-}
-
-.detailLabel {
-    font-weight: 600;
-    color: #4b5563;
-    flex-basis: 60px;
-    flex-shrink: 0;
-}
-
-.detailValue {
-    color: #111827;
-    word-break: break-all;
+.about {
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text);
 }
 
 .description {
     font-size: 0.875rem;
-    color: #374151;
+    color: var(--color-text);
     line-height: 1.5;
     white-space: pre-wrap;
+}
+
+.camps {
     margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.title {
+    color: var(--color-text);
 }
 
 .campList {
@@ -88,6 +82,6 @@
 
 .campItem {
     font-size: 0.875rem;
-    color: #374151;
+    color: var(--color-text);
     margin-bottom: 0.25rem;
 }

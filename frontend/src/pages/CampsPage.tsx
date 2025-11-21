@@ -53,14 +53,6 @@ const CampsPage = () => {
         setMyCamps(prevCamps => [newCamp, ...prevCamps]);
     };
 
-    //TODO: Add search filter
-    // const filteredCoordinators = useMemo(() => {
-    //     return coordinators.filter(coordinator =>
-    //         coordinator.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    //         coordinator.district.toLowerCase().includes(searchQuery.toLowerCase())
-    //     );
-    // }, [coordinators, searchQuery]);
-
     const filteredMyCamps = useMemo(() => {
         return myCamps.filter(camp =>
             camp.name.toLowerCase().includes(searchQueryMyCamps.toLowerCase()) ||
