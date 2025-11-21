@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { type Camp } from "../types/types";
 import { useAuth } from "../hooks/auth";
 import styles from "../assets/styles/ArchivePage.module.css";
@@ -14,6 +14,7 @@ const ArchivePage = () => {
     const [pastCamps, setPastCamps] = useState<Camp[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const [searchQuery, setSearchQuery] = useState('');
 
     const [selectedCamp, setSelectedCamp] = useState<Camp | null>(null);
 
@@ -41,6 +42,14 @@ const ArchivePage = () => {
         fetchPastCamps();
     }, [token]);
 
+    const filteredCamps = useMemo(() => {
+        return pastCamps.filter(camp =>
+            camp.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            camp.country.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            camp.description.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+    }, [pastCamps, searchQuery]);
+
     const renderContent = () => {
         if (isLoading) {
             return <p>Loading past camps...</p>;
@@ -52,7 +61,7 @@ const ArchivePage = () => {
 
         return (
             <CampList
-                camps={pastCamps}
+                camps={filteredCamps}
                 onCampClick={camp => setSelectedCamp(camp)}
             />
         );
@@ -63,6 +72,16 @@ const ArchivePage = () => {
             <h1 className={styles.title}>
                 Archive Camps
             </h1>
+
+            <div className={styles.searchWrapper}>
+                <input
+                    type="text"
+                    placeholder="Search by name, country, description"
+                    className={styles.searchInput}
+                    value={searchQuery}
+                    onChange={e => setSearchQuery(e.target.value)}
+                />
+            </div>
 
             <section className={styles.section}>
                 {renderContent()}

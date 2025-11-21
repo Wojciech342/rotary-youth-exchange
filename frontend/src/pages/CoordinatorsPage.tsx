@@ -76,14 +76,14 @@ const CoordinatorsPage = () => {
         <div className={styles.container}>
             <h1 className={styles.title}>Coordinators</h1>
             <div className={styles.searchWrapper}>
-                    <input
-                        type="text"
-                        placeholder="Search by name, district"
-                        className={styles.searchInput}
-                        value={searchQuery}
-                        onChange={e => setSearchQuery(e.target.value)}
-                    />
-                </div>
+                <input
+                    type="text"
+                    placeholder="Search by name, district"
+                    className={styles.searchInput}
+                    value={searchQuery}
+                    onChange={e => setSearchQuery(e.target.value)}
+                />
+            </div>
 
             <section className={styles.section}>
                 {renderContent()}
