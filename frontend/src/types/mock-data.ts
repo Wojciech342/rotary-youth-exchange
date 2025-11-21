@@ -1,0 +1,85 @@
+import { type Camp } from './camp';
+import { type Coordinator } from './coordinator';
+
+export const mockCoordinator: Coordinator = {
+    id: 1,
+    name: 'Jan Kowalski',
+    email: 'jan.kowalski@rotary.pl',
+    phone: '+48 123 456 789',
+    description: 'Coordinator for District 2231.',
+    district: "2321 Poland",
+};
+
+export const mockMyCamps: Camp[] = [
+    {
+        id: 101,
+        name: 'Discover Pacific Taiwan Cycling Camp 2025',
+        description: 'Visit Taiwan\'s historic and cultural capital, Tainan City, and explore its historical buildings, heritage sites, and temples. Then, discover Alishan, one of Taiwan\'s most famous and visited natural attractions. Experience its amazing sunrise, refreshing climate, breathtaking mountain landscapes, lush forests, and plantations of tea and wasabi.',
+        country: 'Taiwan',
+        coordinator: mockCoordinator,
+        date_start: '2025-07-12',
+        date_end: '2025-07-26',
+        age_min: 15,
+        age_max: 18,
+        price: 1111,
+        status: 'OPEN',
+        entire_limit: 20,
+        male_limit: 10,
+        female_limit: 10,
+        limit_per_country: 2,
+    },
+    {
+        id: 102,
+        name: 'Explore Egypt "Egyptology 2025" camp',
+        description: 'A deep dive into the history of ancient Egypt. Visit pyramids, tombs, and museums.',
+        country: 'Egypt',
+        coordinator: mockCoordinator,
+        date_start: '2025-08-01',
+        date_end: '2025-08-15',
+        age_min: 16,
+        age_max: 19,
+        price: 950,
+        status: 'OPEN',
+        entire_limit: 15,
+        male_limit: 7,
+        female_limit: 8,
+        limit_per_country: 1,
+    }
+];
+
+export const mockOtherCamps: Camp[] = [
+    {
+        id: 201,
+        name: 'French Riviera Sailing Adventure 2025',
+        description: 'Learn to sail on the beautiful coast of France. Based in Nice.',
+        country: 'France',
+        coordinator: { ...mockCoordinator, id: 2, name: 'Marie Claire' },
+        date_start: '2025-06-20',
+        date_end: '2025-07-05',
+        age_min: 16,
+        age_max: 18,
+        price: 1300,
+        status: 'OPEN',
+        entire_limit: 24,
+        male_limit: 12,
+        female_limit: 12,
+        limit_per_country: 2,
+    },
+    {
+        id: 202,
+        name: 'Discover Enjoy Bavaria',
+        description: 'Explore castles, mountains, and the unique culture of Bavaria, Germany.',
+        country: 'Germany',
+        coordinator: { ...mockCoordinator, id: 3, name: 'Hans Gruber' },
+        date_start: '2025-07-15',
+        date_end: '2025-07-30',
+        age_min: 15,
+        age_max: 17,
+        price: 800,
+        status: 'OPEN',
+        entire_limit: 30,
+        male_limit: 15,
+        female_limit: 15,
+        limit_per_country: 3,
+    },
+];

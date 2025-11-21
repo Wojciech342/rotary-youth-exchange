@@ -1,0 +1,129 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.input,
+.textarea,
+.select {
+    display: block;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-border);
+    padding: 0.6rem 0.8rem;
+    font-size: 0.875rem;
+    box-shadow: var(--box-shadow);
+    background-color: #fff;
+}
+
+.textarea {
+    font-family: inherit;
+    resize: vertical;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-color: var(--color-primary-light);
+    box-shadow: 0 0 0 2px var(--color-primary-light);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.25rem;
+}
+@media (min-width: 640px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.gridSmall {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+@media (min-width: 640px) {
+    .gridSmall {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.buttonGroup {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.buttonPrimary,
+.buttonSecondary {
+    border-radius: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: var(--box-shadow);
+    transition: background-color 0.2s transform 0.2s;
+}
+
+.buttonPrimary {
+    background-color: var(--color-green-light);
+    color: var(--color-green);
+}
+
+.buttonPrimary:hover {
+        background-color: var(--color-green-light-hover);
+        transform: translateY(-1px);
+}
+
+.buttonPrimary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.buttonSecondary {
+    background-color: var(--color-red-light);
+    color: var(--color-red);
+}
+
+.buttonSecondary:hover {
+    background-color: var(--color-red-light-hover);
+    transform: translateY(-1px);
+}
+
+.buttonSecondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.error {
+    padding: 1rem;
+    background-color: var(--color-red-light);
+    color: var(--color-red);
+    border-radius: 1rem;
+    border: 1px solid var(--color-red);
+    font-size: 0.875rem;
+    text-align: center;
+    margin-top: 1rem;
+}

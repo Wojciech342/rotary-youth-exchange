@@ -1,0 +1,79 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    transition: box-shadow 0.3s;
+}
+
+.item:hover {
+    box-shadow: var(--box-shadow-hover);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.title {
+    color: var(--color-blue-dark);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.secondaryInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 3rem;
+    color: var(--color-text);
+    font-size: 0.8rem;
+}
+
+.majorInfo {
+    display: flex;
+    align-items: start;
+    gap: 1.5rem;
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.type {
+    color: black;
+    font-weight: 700;
+}
+
+.price {
+    color: var(--color-green);
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: none;
+    background-color: var(--color-blue-light);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s transform 0.2s;
+}
+
+.button::after {
+    content: ">";
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.button:hover {
+    background-color: var(--color-blue-light-hover);
+    transform: translateY(-1px);
+}

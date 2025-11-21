@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 0.5rem;
+}
+
+.empty {
+    color: #6b7280;
+    padding: 2rem;
+    text-align: center;
+}
