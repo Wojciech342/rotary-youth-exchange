@@ -28,8 +28,11 @@
   --color-yellow-disabled: #f4bd5e;
   --color-red: #dc2626;
   --color-red-light: #fee2e2;
+  --color-red-light-hover: #f9c6c6;
   --color-blue-pale: #dbeafe;
   --color-green: #00a63e;
+  --color-green-light: #7df6a9;
+  --color-green-light-hover: #58e68c;
   --color-background-dark: #eaebec;
 }
 

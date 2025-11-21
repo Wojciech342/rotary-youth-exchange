@@ -111,7 +111,7 @@ const AddCampModal = ({ onClose, onCampAdded }: AddCampModalProps) => {
                 </div>
                 <div className={styles.grid}>
                     <div className={styles.formGroup}>
-                        <label htmlFor="price" className={styles.label}>Price (EUR)</label>
+                        <label htmlFor="price" className={styles.label}>Price (USD)</label>
                         <input
                             type="number"
                             id="price"
