@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './hooks/auth';
-import ProtectedRoute from './components/protected-route';
+import ProtectedRoute from './components/ProtectedRoute';
 import MainLayout from './components/MainLayout';
 import styles from './assets/styles/App.module.css';
 

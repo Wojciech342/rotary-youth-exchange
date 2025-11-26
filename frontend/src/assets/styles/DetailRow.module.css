@@ -1,0 +1,16 @@
+.detailRow {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.detailLabel {
+    font-weight: 600;
+    color: #4b5563;
+    flex-basis: 80px;
+    flex-shrink: 0;
+}
+
+.detailValue {
+    color: #111827;
+}
