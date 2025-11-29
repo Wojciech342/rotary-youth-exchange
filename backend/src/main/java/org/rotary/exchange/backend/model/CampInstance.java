@@ -3,6 +3,8 @@ package org.rotary.exchange.backend.model;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -32,4 +34,9 @@ public class CampInstance {
     private Integer limitTotal;
     private Integer limitMale;
     private Integer limitFemale;
+
+    @OneToMany(mappedBy = "campInstance", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private List<CampDistrictStatus> districtStatuses = new ArrayList<>();
 }
