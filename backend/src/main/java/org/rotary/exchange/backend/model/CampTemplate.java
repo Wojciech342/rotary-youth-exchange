@@ -15,6 +15,14 @@ public class CampTemplate {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    /**
+     * The coordinator who owns this template.
+     * Null means it's an admin-created global template.
+     */
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
+    private Coordinator owner;
+
     private String name;
 
     @Column(columnDefinition = "TEXT")
