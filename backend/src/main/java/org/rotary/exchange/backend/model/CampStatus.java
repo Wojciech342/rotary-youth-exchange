@@ -1,9 +1,9 @@
 package org.rotary.exchange.backend.model;
 
 public enum CampStatus {
-    AVAILABLE,
+    OPEN,
     ONLY_MALE,
     ONLY_FEMALE,
-    NOT_AVAILABLE,
-    ARCHIVED,
+    CLOSED,
+    ARCHIVED
 }
